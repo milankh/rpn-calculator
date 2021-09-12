@@ -1,4 +1,5 @@
-const readline = require('readline');
+const readline = require("readline");
+const validateInput = require("./validateInput");
 
 const { stdin, stdout } = process;
 
@@ -26,8 +27,8 @@ reader.on("line", (userInput) => {
     }
 
     // when there is user input that needs to be processed
-    if (userInput) {
-        // TODO: validate and process the input
+    if (userInput && validateInput(userInput)) {
+        // TODO: process the input to calculate
     } else {
         // ignore 
         console.log("\n invalid input")
