@@ -1,0 +1,22 @@
+{
+  "name": "rpn-calculator",
+  "version": "1.0.0",
+  "description": "This is a command-line reverse polish notation (RPN) calculator",
+  "main": "reader.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/milankh/rpn-calculator.git"
+  },
+  "author": "milan kharal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/milankh/rpn-calculator/issues"
+  },
+  "homepage": "https://github.com/milankh/rpn-calculator#readme",
+  "devDependencies": {
+    "jest": "^27.1.1"
+  }
+}
