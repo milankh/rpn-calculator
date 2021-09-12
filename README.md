@@ -4,22 +4,24 @@ This is a command line RPN (reverse polish notation) calculator. RPN is a mathem
 
 ## Installation
 
-Checkout the branch [rpn-calculator](https://github.com/milankh/rpn-calculator.git) to run the application or run the below command in your terminal.
+Clone the branch [rpn-calculator](https://github.com/milankh/rpn-calculator.git) to copy the application or run the below command in your terminal.
 
 ```bash
-git checkout rpn-calculator https://github.com/milankh/rpn-calculator.git
+git clone https://github.com/milankh/rpn-calculator.git
 ```
 
 ## Running
-Use command terminal to access to the folder rpn-calculator and run the following in order
+Use command terminal to ```cd``` in to the ```rpn-calculator``` and run the following
 ```bash 
 npm install
 ```
+Use command terminal to ```cd``` in to the ```src``` folder and run the following
+
 ```bash 
 node reader.js
 ```
 
-- For running tests 
+For tests, run the following
 ```bash 
 npm test
 ```
