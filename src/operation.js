@@ -18,12 +18,21 @@ clearStack = () => {
     processedValues = [];
 }
 
+printValues = () => {
+    if (processedValues && processedValues.length != 0) {
+        if (processedValues.length > 1) {
+            console.log("\n")
+            console.log(processedValues);
+        } else console.log("\n => ", processedValues[processedValues.length - 1]);
+      }
+}
+
 processInput = (userInput) => {
     const splitChars = userInput.split(" ");
     splitChars.forEach((charBlock) => {
         if (supportedOperators.includes(charBlock.trim())) {
             if (processedValues.length < 2) {
-                console.log("Not enough values to operate");
+                console.log("\nNot enough values to operate");
             } else {
                 let firstValue = popProcessedValues(processedValues);
                 let secondValue = popProcessedValues(processedValues);
@@ -65,13 +74,10 @@ processInput = (userInput) => {
             }
         }
     });
-
-    if (processedValues && processedValues.length != 0) {
-        if (processedValues.length > 1) {
-          console.log(processedValues);
-        } else console.log("\n => ", processedValues[processedValues.length - 1]);
-      }
+    printValues();
 }
 
 module.exports.processInput = processInput;
 module.exports.clearStack = clearStack;
+module.exports.processValues = processValues;
+module.exports.popProcessedValues = popProcessedValues;

@@ -7,13 +7,16 @@ const { stdin, stdout } = process;
 const reader = readline.createInterface({
     input: stdin,
     output: stdout,
-    terminal: false,
+    terminal: false
 });
 
 readline.emitKeypressEvents(process.stdin);
 
 // raw mode to lisen to each characters separately
 stdin.setRawMode(true);
+
+reader.setPrompt(`Enter a number to begin \n`);
+reader.prompt()
 
 reader.on("line", (userInput) => {
     // just for conveniene, if you type clear and enter it will clear the current stack
