@@ -1,5 +1,6 @@
 const readline = require("readline");
 const validateInput = require("./validateInput");
+const operation = require("./operation");
 
 const { stdin, stdout } = process;
 
@@ -17,7 +18,7 @@ stdin.setRawMode(true);
 reader.on("line", (userInput) => {
     // just for conveniene, if you type clear and enter it will clear the current stack
     if (userInput === "clear") {
-        // TODO: clear the stack later once we have that
+        operation.clearStack();
         console.log("\n stack is cleared");
         return;
     }
@@ -28,7 +29,7 @@ reader.on("line", (userInput) => {
 
     // when there is user input that needs to be processed
     if (userInput && validateInput(userInput)) {
-        // TODO: process the input to calculate
+        operation.processInput(userInput);
     } else {
         // ignore 
         console.log("\n invalid input")
@@ -43,8 +44,8 @@ stdin.on("keypress", (str, key) => {
             console.log("Keyboard interrupt, exiting ...");
             process.exit();
         } else if (
-            key.name.toLowerCase === "d" ||
-            key.name.toLowerCase === "z"
+            key.name.toLowerCase() === "d" ||
+            key.name.toLowerCase() === "z"
         ) {
             //end of file
             console.log("EOF, exiting ...");
